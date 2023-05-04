@@ -50,8 +50,6 @@ d3.xml('res/nycmap.svg').then((nycmap) => {
         .range([0, svgh]);
     svg.on("mousemove", (event) => {    
         var coords = d3.pointer( event );
-        xm.innerHTML = xpix2coords(clamp(coords[0], 0, svgw)).toString();
-        ym.innerHTML = ypix2coords(clamp(coords[1], 0, svgh)).toString();
         //console.log(xpix2coords(clamp(coords[0], 0, svgw)), ypix2coords(clamp(coords[1], 0, svgh))); // log the mouse x,y position
     })
     console.time("totalTime:");
@@ -63,28 +61,6 @@ d3.xml('res/nycmap.svg').then((nycmap) => {
             d3.json('/results/input_output.json'),
             //NYC 
             
-            d3.csv('res/202303-citibike-tripdata/202303-citibike-tripdata.000.csv'),
-            d3.csv('res/202303-citibike-tripdata/202303-citibike-tripdata.001.csv'),
-            d3.csv('res/202303-citibike-tripdata/202303-citibike-tripdata.002.csv'),
-            d3.csv('res/202303-citibike-tripdata/202303-citibike-tripdata.003.csv'),
-            d3.csv('res/202303-citibike-tripdata/202303-citibike-tripdata.004.csv'),
-            d3.csv('res/202303-citibike-tripdata/202303-citibike-tripdata.005.csv'),
-            d3.csv('res/202303-citibike-tripdata/202303-citibike-tripdata.006.csv'),
-            d3.csv('res/202303-citibike-tripdata/202303-citibike-tripdata.007.csv'),
-            d3.csv('res/202303-citibike-tripdata/202303-citibike-tripdata.008.csv'),
-            d3.csv('res/202303-citibike-tripdata/202303-citibike-tripdata.009.csv'),
-            d3.csv('res/202303-citibike-tripdata/202303-citibike-tripdata.010.csv'),
-            d3.csv('res/202303-citibike-tripdata/202303-citibike-tripdata.011.csv'),
-            d3.csv('res/202303-citibike-tripdata/202303-citibike-tripdata.012.csv'),
-            d3.csv('res/202303-citibike-tripdata/202303-citibike-tripdata.013.csv'),
-            d3.csv('res/202303-citibike-tripdata/202303-citibike-tripdata.014.csv'),
-            d3.csv('res/202303-citibike-tripdata/202303-citibike-tripdata.015.csv'),
-            d3.csv('res/202303-citibike-tripdata/202303-citibike-tripdata.016.csv'),
-            d3.csv('res/202303-citibike-tripdata/202303-citibike-tripdata.017.csv'),
-            d3.csv('res/202303-citibike-tripdata/202303-citibike-tripdata.018.csv'),
-            d3.csv('res/202303-citibike-tripdata/202303-citibike-tripdata.019.csv'),
-            d3.csv('res/202303-citibike-tripdata/202303-citibike-tripdata.020.csv'),
-            d3.csv('res/202303-citibike-tripdata/202303-citibike-tripdata.021.csv'),
             
             
             /*d3.csv('res/202302-citibike-tripdata.csv'),
@@ -94,7 +70,6 @@ d3.xml('res/nycmap.svg').then((nycmap) => {
             d3.csv('res/202210-citibike-tripdata.csv'),
             */
             //JERSEY CITY
-            d3.csv('res/JC-citibike-tripdata/JC-202303-citibike-tripdata.csv'),
         ]
     ).then((data) => {
         console.log("I am here")
