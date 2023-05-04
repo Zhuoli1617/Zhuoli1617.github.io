@@ -70,7 +70,7 @@ d3.xml('res/nycmap.svg').then((nycmap) => {
             d3.csv('res/202210-citibike-tripdata.csv'),
             */
             //JERSEY CITY
-        ]
+            ]
     ).then((data) => {
         console.log("I am here")
         data.forEach(element => {
@@ -152,10 +152,10 @@ d3.xml('res/nycmap.svg').then((nycmap) => {
                 .attr('stroke-width', '0')
                 .on("mouseover", function(d, i){
                     console.log(i, element[i]);
-                    stationname.innerHTML = i;
-                    stationdetails.innerHTML = "Number of trips to: " + element[i][END];
-                    stationdetails.innerHTML += "</br>Number of trips from: " + element[i][START];
-                    stationdetails.innerHTML += "</br>Score value: " + ((element[i][END] - element[i][START]));
+                    //stationname.innerHTML = i;
+                    //stationdetails.innerHTML = "Number of trips to: " + element[i][END];
+                    //stationdetails.innerHTML += "</br>Number of trips from: " + element[i][START];
+                    //stationdetails.innerHTML += "</br>Score value: " + ((element[i][END] - element[i][START]));
                     d3.select(this)
                         .style("stroke", "black")
                         .attr('fill-opacity', 1)
